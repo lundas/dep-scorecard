@@ -9,7 +9,7 @@ export default function Scorecard() {
           <th>Dependency</th>
           <th>Version</th>
           <th>OpenSSF Score</th>
-          <th>Latest Version</th>
+          <th>Default Version</th>
           <th>Recommendation</th>
         </tr>
       </thead>
