@@ -1,6 +1,7 @@
 // Generated using webpack-cli https://github.com/webpack/webpack-cli
 
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const isProduction = process.env.NODE_ENV == 'production';
 
@@ -14,7 +15,12 @@ const config = {
     filename: 'bundle.js',
   },
   plugins: [
-    // Add your plugins here
+    new HtmlWebpackPlugin({
+      hash: true,
+      filename: './index.html',
+      template: './client/src/template.html',
+      title: 'Dependency Scorecard',
+    }),
     // Learn more about plugins from https://webpack.js.org/configuration/plugins/
   ],
   devtool: 'source-map',
