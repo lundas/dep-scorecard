@@ -36,12 +36,20 @@ export default function UploadForm({ setDependencies, setRevealScorecard }) {
     }
   }
 
+  function handleChange(e) {
+    e.preventDefault();
+    setRevealScorecard(true);
+    if (e.target.files.length === 1) {
+      submitFile(e.target.files);
+    }
+  }
+
   return (
-    <form className="mx-auto relative border-green-500 border-2" encType="multipart/form-data" onDragEnter={handleDrag} onDragLeave={handleDrag} onDragOver={handleDrag}>
-      <input className="invisible absolute" type="file" name="file" id="file-upload-input" accept=".json" />
-      <label id="file-upload-label" htmlFor="file-upload-input" className="relative border-blue-500 border-2">
-        <div className="border-black border-2">
-          Drop or Click
+    <form className="mx-auto relative border-green-500 bg-green-500 border-2 w-1/2 h-1/4" encType="multipart/form-data" onDragEnter={handleDrag} onDragLeave={handleDrag} onDragOver={handleDrag}>
+      <input className="hidden" type="file" name="file" id="file-upload-input" accept=".json" onChange={handleChange} />
+      <label id="file-upload-label" htmlFor="file-upload-input" className="border-blue-500 border-2 block w-full h-full">
+        <div className="border-black border-2 w-full h-full">
+          <div>Drag & Drop or Click</div>
           <input
             type="submit"
             onClick={(e) => {
