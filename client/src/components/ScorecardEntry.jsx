@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function ScoreCardEntry() {
+export default function ScoreCardEntry({ dependency }) {
   return (
     <tr>
       <td>React</td>
