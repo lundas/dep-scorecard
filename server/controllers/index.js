@@ -24,7 +24,7 @@ exports.processFile = (req, res) => {
 
   depArray
     .then((results) => {
-      res.status(200).json({ dependencies: results[0], devDependencies: results[1] });
+      res.status(201).json({ dependencies: results[0], devDependencies: results[1] });
     })
     .catch((err) => {
       console.log('Error assembling dependency array:', err);
