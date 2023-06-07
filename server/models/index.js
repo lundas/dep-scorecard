@@ -27,6 +27,7 @@ exports.insertPackage = (name, version, repository, homepage, dependencies, devD
     homepage,
     dependencies: depArray,
     devDependencies: devDepArray,
+    date: Date.now(),
   };
   Package.create(document);
 };

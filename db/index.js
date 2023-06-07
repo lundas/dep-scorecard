@@ -14,6 +14,7 @@ const packageSchema = new mongoose.Schema({
   homepage: String,
   dependencies: [dependecySchema],
   devDependencies: [dependecySchema],
+  date: BigInt,
 });
 
 const Package = mongoose.model('Package', packageSchema);
