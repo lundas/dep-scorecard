@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-export default function UploadForm({ setDependencies }) {
+export default function UploadForm({ setDependencies, setRevealScorecard }) {
   const [fileDrag, setFileDrag] = useState(false);
 
   function submitFile(files) {
@@ -30,16 +30,17 @@ export default function UploadForm({ setDependencies }) {
     e.preventDefault();
     e.stopPropagation();
     setFileDrag(false);
+    setRevealScorecard(true);
     if (e.dataTransfer.files.length === 1) {
       submitFile(e.dataTransfer.files);
     }
   }
 
   return (
-    <form className="relative border-2 border-black" encType="multipart/form-data" onDragEnter={handleDrag} onDragLeave={handleDrag} onDragOver={handleDrag}>
-      <input className="invisible" type="file" name="file" id="file-upload-input" accept=".json" />
-      <label id="file-upload-label" htmlFor="file-upload-input">
-        <div>
+    <form className="mx-auto relative border-green-500 border-2" encType="multipart/form-data" onDragEnter={handleDrag} onDragLeave={handleDrag} onDragOver={handleDrag}>
+      <input className="invisible absolute" type="file" name="file" id="file-upload-input" accept=".json" />
+      <label id="file-upload-label" htmlFor="file-upload-input" className="relative border-blue-500 border-2">
+        <div className="border-black border-2">
           Drop or Click
           <input
             type="submit"
