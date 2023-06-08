@@ -14,7 +14,7 @@ export default function App() {
   const [dependencies, setDependencies] = useState(blankDeps);
 
   return (
-    <div className="flex flex-col justify-evenly w-full h-full relative" role="application">
+    <div className="bg-dk-blue flex flex-col justify-evenly w-full h-full relative" role="application">
       <div>
         <h1 className="text-6xl font-diph text-center">
           Dependecy Scorecard
