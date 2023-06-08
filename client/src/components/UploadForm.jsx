@@ -36,6 +36,7 @@ export default function UploadForm({ setDependencies, setRevealScorecard }) {
     e.stopPropagation();
     setFileDrag(false);
     setRevealScorecard(true);
+    document.querySelector('form').classList.remove('file-drag');
     if (e.dataTransfer.files.length === 1) {
       submitFile(e.dataTransfer.files);
     }
