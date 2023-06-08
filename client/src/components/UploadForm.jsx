@@ -45,10 +45,10 @@ export default function UploadForm({ setDependencies, setRevealScorecard }) {
   }
 
   return (
-    <form className="mx-auto relative border-green-500 bg-green-500 border-2 w-1/2 h-1/4" encType="multipart/form-data" onDragEnter={handleDrag} onDragLeave={handleDrag} onDragOver={handleDrag}>
+    <form className="mx-auto relative border-slate-500 border-dashed border-4 w-1/2 h-1/4" encType="multipart/form-data" onDragEnter={handleDrag} onDragLeave={handleDrag} onDragOver={handleDrag}>
       <input className="hidden" type="file" name="file" id="file-upload-input" accept=".json" onChange={handleChange} />
-      <label id="file-upload-label" htmlFor="file-upload-input" className="border-blue-500 border-2 block w-full h-full">
-        <div className="border-black border-2 w-full h-full">
+      <label id="file-upload-label" htmlFor="file-upload-input" className="block w-full h-full">
+        <div className="flex flex-col justify-evenly items-center w-full h-full">
           <div>Drag & Drop or Click</div>
           <input
             type="submit"
@@ -61,7 +61,7 @@ export default function UploadForm({ setDependencies, setRevealScorecard }) {
           />
         </div>
       </label>
-      {fileDrag && <div id="drop-target" onDragEnter={handleDrag} onDragLeave={handleDrag} onDragOver={handleDrag} onDrop={handleDrop} className="absolute bg-orange-500 opacity-90 h-full w-full" />}
+      {fileDrag && <div id="drop-target" onDragEnter={handleDrag} onDragLeave={handleDrag} onDragOver={handleDrag} onDrop={handleDrop} className="absolute bg-orange-500 opacity-90 h-full w-full top-0 left-0" />}
     </form>
   );
 }

@@ -11,7 +11,7 @@ export default function App() {
   });
 
   return (
-    <div className="flex flex-col justify-evenly border-purple-500 border-2 w-full h-full relative" role="application">
+    <div className="flex flex-col justify-evenly w-full h-full relative" role="application">
       <div>
         <h1 className="text-3xl font-bold underline hover:text-sky-700 text-center">Hello, World</h1>
       </div>
