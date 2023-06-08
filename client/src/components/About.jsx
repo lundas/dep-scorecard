@@ -13,9 +13,24 @@ export default function About() {
       </div>
       <div id="about-section">
         <h2 className="text-5xl font-diph m-3">About</h2>
-        <p className="m-3 font-ral">Package data from deps.dev apis</p>
-        <p className="m-3 font-ral">Take me to the danger zone, where the neon lights shine bright. Walking on sunshine, feeling the rhythm of the night. Oh, we're halfway there, living on a prayer. Dancing with myself, in a land down under, without a care. Sweet child o' mine, we built this city on rock and roll. Don't stop believin', it's a final countdown to lose control. Every breath you take, every move you make, I'll be watching you, like a virgin, ready to break. With or without you, I wanna dance with somebody, we can't stop the beat. Livin' on a prayer, I'm addicted to love's heat. Pour some sugar on me, like a prayer in the midnight hour. I want to know what love is, I want you to show me the power.</p>
-        <p className="m-3 font-ral">Smells like teen spirit in the air, as I'm losing my religion with a flair. Don't speak, just bittersweet symphony, can't you see? Wonderwall of emotions, black hole sun shining on me. I want it that way, my heart will go on, nothing compares to you, from dusk till dawn. Enter sandman, under the bridge I cry, no rain, no gain, don't ask me why. Killing me softly with his song, I believe I can fly, as the rhythm is gonna get you, oh my! Wannabe my lover, say you'll be there, I'll be there for you, a friend who cares.</p>
+        <p className="m-3 font-ral">Picture this: you&apos;re developing your dream project, pouring your heart and soul into it. But oh no! What about those pesky dependencies?? Do they have any lurking vulnerabilities? Who has the time to comb through all those OSV docs?? 😑</p>
+        <p className="m-3 font-ral">Don&apos;t let those scary vulns ruin all your hard work. With Dependecy Scorecard, just upload your package.json and we&apos;ll aggregate the OSSF scores for each dependecy right here in one easy to find place. </p>
+        <p className="m-3 font-ral">Say good-bye to sleepless nights. Rest easy with Dependecy Scorecard!</p>
+      </div>
+      <div id="link-section">
+        <h3 className="text-3xl font-diph m-3">Links</h3>
+        <p className="m-3 font-ral">
+          Package data aggregated from
+          {' '}
+          <a href="https://deps.dev/" className="text-lt-blue underline">deps.dev</a>
+          {' '}
+          apis. They&apos;re pretty cool, check them out!
+        </p>
+        <p className="m-3 font-ral">
+          Also, you probably should look at those
+          {' '}
+          <a href="https://osv.dev/" className="text-lt-blue underline">OSV docs...</a>
+        </p>
       </div>
     </div>
   );

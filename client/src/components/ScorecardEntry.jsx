@@ -3,7 +3,7 @@ import React from 'react';
 export default function ScoreCardEntry({ dependency }) {
   function recommendation(score) {
     let rec = 'n/a';
-    if (Number(score) <= 3.5) {
+    if (Number(score) <= 3.5 && score !== null) {
       rec = 'upgrade/switch';
     } else if (Number(score) > 3.5) {
       rec = 'wait';
