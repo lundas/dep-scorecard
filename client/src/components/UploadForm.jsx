@@ -13,6 +13,9 @@ export default function UploadForm({ setDependencies, setRevealScorecard }) {
       },
     })
       .then((res) => setDependencies(res.data))
+      .then(() => {
+        document.querySelector('input[type=file]').value = '';
+      })
       .catch((err) => console.log('Submit Err', err));
   }
 

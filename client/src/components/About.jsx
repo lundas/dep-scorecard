@@ -6,9 +6,9 @@ export default function About() {
       <div id="instructions-section">
         <h2 className="text-5xl font-diph m-3">Instructions</h2>
         <ol className="m-5 list-decimal">
-          <li className="mx-8 my-5">Snag your package.json</li>
-          <li className="mx-8 my-5">Drop it in the box (or click and select)</li>
-          <li className="mx-8 my-5">Check out your dependecy scorecard</li>
+          <li className="mx-8 my-5 font-ral">Snag your package.json</li>
+          <li className="mx-8 my-5 font-ral">Drop it in the box (or click and select)</li>
+          <li className="mx-8 my-5 font-ral">Check out your dependecy scorecard</li>
         </ol>
       </div>
       <div id="about-section">
