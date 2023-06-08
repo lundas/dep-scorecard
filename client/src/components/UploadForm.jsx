@@ -24,8 +24,10 @@ export default function UploadForm({ setDependencies, setRevealScorecard }) {
     e.stopPropagation();
     if (e.type === 'dragenter' || e.type === 'dragover') {
       setFileDrag(true);
+      document.querySelector('form').classList.add('file-drag');
     } else if (e.type === 'dragleave') {
       setFileDrag(false);
+      document.querySelector('form').classList.remove('file-drag');
     }
   }
 

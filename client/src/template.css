@@ -18,3 +18,10 @@
 
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .file-drag {
+    background-color: rgba(231, 236, 239, 0.7);
+    color: theme('colors.dk-blue');
+  }
+}
