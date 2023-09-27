@@ -7,14 +7,16 @@ exports.processFile = (req, res) => {
     // description,
     // main,
     // scripts,
-    // repository,
+    repository,
     // author,
     // license,
     // bugs,
-    // hompage,
+    homepage,
     devDependencies,
     dependencies,
   } = JSON.parse(req.file.buffer.toString());
+
+  models.insertPackage(name, version, repository, homepage, dependencies, devDependencies);
 
   const depRows = exports.buildDependecyArray(dependencies);
   const devDepRows = exports.buildDependecyArray(devDependencies);
@@ -22,7 +24,7 @@ exports.processFile = (req, res) => {
 
   depArray
     .then((results) => {
-      res.status(200).json({ dependencies: results[0], devDependencies: results[1] });
+      res.status(201).json({ dependencies: results[0], devDependencies: results[1] });
     })
     .catch((err) => {
       console.log('Error assembling dependency array:', err);
@@ -37,11 +39,35 @@ exports.buildDependecyArray = (dependencyObj) => Promise.all(
       version: dependencyObj[key],
       score: await models.getProjectData(key, dependencyObj[key].slice(1))
         .then((results) => (results.data.scorecard ? results.data.scorecard.overallScore : null))
-        .catch((err) => console.log(`Error getting score for ${key}`, err)),
+        .catch((err) => {
+          console.log(`Error getting score for ${key}`);
+          if (err.response) {
+            console.log(err.response.data);
+            console.log(err.response.status);
+            console.log(err.response.headers);
+          } else if (err.request) {
+            console.log(err.request);
+          } else {
+            console.log('Error', err.message);
+          }
+          console.log(err.config);
+        }),
       defaultVersion: await models.getPackageData(key)
         .then((results) => results.data.versions.filter((v) => v.isDefault)[0])
         .then((result) => result.versionKey.version)
-        .catch((err) => console.log(`Error getting defaultVersion in ${key}`, err)),
+        .catch((err) => {
+          console.log(`Error getting defaultVersion in ${key}`, err);
+          if (err.response) {
+            console.log(err.response.data);
+            console.log(err.response.status);
+            console.log(err.response.headers);
+          } else if (err.request) {
+            console.log(err.request);
+          } else {
+            console.log('Error', err.message);
+          }
+          console.log(err.config);
+        }),
       recommend: null,
     };
     return obj;
