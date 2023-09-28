@@ -22,9 +22,7 @@ Drag and drop (or click to select) a file into the specified area. Dependency Sc
 ## Future Development
 
 ## Contributors
-| Name | Github | Twitter |
-| ---- | ------ | ------- |
+| Name | Github | Twitter | LinkedIn |
+| ---- | ------ | ------- | -------- |
 | [![Andrew Lund](https://contrib.rocks/image?repo=lundas/dep-scorecard)](https://github.com/lundas/dep-scorecard/graphs/contributors) | [lundas](https://www.github.com/lundas) | [@lundas_](https://twitter.com/lundas_)|
-<a href="https://github.com/lundas/dep-scorecard/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=lundas/dep-scorecard" />
-</a>
+
