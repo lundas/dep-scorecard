@@ -11,7 +11,7 @@
 Vulnerabilities in open-source projects provide serious security risks for all software development projects. A number of tools exist to help engineers evaluate the security of their open-source dependencies. Dependency Scorecard is a tool that aggregates information from public APIs to help developers make informed decisions regarding the security of their project dependencies.
 
 ## Functionality
-*Currently Supported Files: package.json* \n\n
+*Currently Supported Files: package.json*\\
 Drag and drop (or click to select) a file into the specified area. Dependency Scorecard then generates a scorecard using information from public deps.dev APIs.
 
 ## Links
@@ -22,6 +22,8 @@ Drag and drop (or click to select) a file into the specified area. Dependency Sc
 ## Future Development
 
 ## Contributors
-<a href="https://github.com/lundas/dep-scorecard/graphs/contributors">
+| Name | Github | Twitter |
+| ---- | ------ | ------- |
+| <a href="https://github.com/lundas/dep-scorecard/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=lundas/dep-scorecard" />
-</a>
+</a> Andrew Lund | [lundas](https://www.github.com/lundas) | [@lundas_](https://twitter.com/lundas_)|
