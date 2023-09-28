@@ -18,12 +18,16 @@ Drag and drop (or click to select) a file into the specified area. Dependency Sc
 <img src="https://github.com/lundas/dep-scorecard/assets/26886397/578737d7-8b2c-401b-a620-55b2b62f0e26" width="500" />
 <img src="https://github.com/lundas/dep-scorecard/assets/26886397/62a245a0-8bb3-4516-9325-690156f99013" width="500" />
 
+## Usage
+Coming soon
+
 ## Links
 - [deps.dev](https://deps.dev/)
 - [osv.dev](https://osv.dev/)
 - [OSSF Scorecard](https://github.com/ossf/scorecard)
 
 ## Future Development
+Coming Soon
 
 ## Contributors
 [![Andrew Lund](https://contrib.rocks/image?repo=lundas/dep-scorecard)](https://github.com/lundas/dep-scorecard/graphs/contributors)
