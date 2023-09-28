@@ -8,7 +8,7 @@
 
 
 ## Overview
-Vulnerabilities in open-source projects provide serious security risks for all software development projects. A number of tools exist to help engineers evaluate the security of their open-source dependencies. Dependency Scorecard is a tool that aggregates information from public APIs to help developers make informed decisions regarding the security of their project dependencies.
+Vulnerabilities in open-source projects can create serious security risks for all software development projects. A number of tools exist to help engineers evaluate the security of their open-source dependencies. Dependency Scorecard is a tool that aggregates information from public APIs to help developers make informed decisions regarding the security of their project dependencies.
 
 ## Functionality
 *Currently Supported Files: package.json* <br><br>
