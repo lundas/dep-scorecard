@@ -11,9 +11,9 @@ Drag and drop (or click to select) a file into the specified area. Dependency Sc
 
 
 ## Links
-- (https://deps.dev/)
-- (https://osv.dev/)
-- (https://github.com/ossf/scorecard)
+- [deps.dev] https://deps.dev/
+- [osv.dev] https://osv.dev/
+- [OSSF Scorecard] https://github.com/ossf/scorecard
 ## Future Development
 
 ## Contributors
