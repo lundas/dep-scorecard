@@ -22,8 +22,7 @@ Drag and drop (or click to select) a file into the specified area. Dependency Sc
 ## Future Development
 
 ## Contributors
-[![Andrew Lund](https://contrib.rocks/image?repo=lundas/dep-scorecard)](https://github.com/lundas/dep-scorecard/graphs/contributors) <br>
-- [![LinkedIn](https://img.shields.io/badge/Andrew%20Lund-%230A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/andrewslund/)
-[![Github](https://img.shields.io/badge/lundas-%23181717?style=for-the-badge&logo=github&logoColor=white)](https://www.github.com/lundas)
+[![Andrew Lund](https://contrib.rocks/image?repo=lundas/dep-scorecard)](https://github.com/lundas/dep-scorecard/graphs/contributors) <br>[![LinkedIn](https://img.shields.io/badge/Andrew%20Lund-%230A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/andrewslund/) <br>
+[![Github](https://img.shields.io/badge/lundas-%23181717?style=for-the-badge&logo=github&logoColor=white)](https://www.github.com/lundas)<br>
 [![Twitter](https://img.shields.io/badge/%40lundas__-%23000000?style=for-the-badge&logo=x&logoColor=white)](https://www.twitter.com/lundas_)
 
