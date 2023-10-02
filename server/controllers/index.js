@@ -18,13 +18,16 @@ exports.processFile = (req, res) => {
 
   models.insertPackage(name, version, repository, homepage, dependencies, devDependencies);
 
-  const depRows = exports.buildDependecyArray(dependencies);
-  const devDepRows = exports.buildDependecyArray(devDependencies);
-  const depArray = Promise.all([depRows, devDepRows]);
+  // const depRows = exports.buildDependecyArray(dependencies);
+  // const devDepRows = exports.buildDependecyArray(devDependencies);
+  // const depArray = Promise.all([depRows, devDepRows]);
+
+  const allDeps = { ...dependencies, ...devDependencies };
+  const depArray = exports.buildDependecyArray(allDeps);
 
   depArray
     .then((results) => {
-      res.status(201).json({ dependencies: results[0], devDependencies: results[1] });
+      res.status(201).json({ dependencies: results, devDependencies: [] });
     })
     .catch((err) => {
       console.log('Error assembling dependency array:', err);
