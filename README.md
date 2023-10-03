@@ -15,8 +15,8 @@ Vulnerabilities in open-source projects can create serious security risks for al
 ## Functionality
 *Currently Supported Files: package.json* <br><br>
 Drag and drop (or click to select) a file into the specified area. Dependency Scorecard then generates a scorecard using information from public deps.dev APIs. <br><br>
-<img src="https://github.com/lundas/dep-scorecard/assets/26886397/578737d7-8b2c-401b-a620-55b2b62f0e26" width="500" />
-<img src="https://github.com/lundas/dep-scorecard/assets/26886397/62a245a0-8bb3-4516-9325-690156f99013" width="500" />
+<img src="https://github.com/lundas/dep-scorecard/assets/26886397/578737d7-8b2c-401b-a620-55b2b62f0e26" width="300" />
+<img src="https://github.com/lundas/dep-scorecard/assets/26886397/62a245a0-8bb3-4516-9325-690156f99013" width="300" />
 ![gif](https://github.com/lundas/dep-scorecard/assets/26886397/c32fb921-f0dd-4acb-b5a3-adc23513dd0c)
 
 
