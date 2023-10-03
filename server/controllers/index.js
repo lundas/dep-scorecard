@@ -45,15 +45,16 @@ exports.buildDependecyArray = (dependencyObj) => Promise.all(
         .catch((err) => {
           console.log(`Error getting score for ${key}`);
           if (err.response) {
-            console.log(err.response.data);
-            console.log(err.response.status);
-            console.log(err.response.headers);
+            console.log('*** Response Data: ', err.response.data);
+            console.log('*** Response Status: ', err.response.status);
+            console.log('*** Response Headers: ', err.response.headers);
           } else if (err.request) {
-            console.log(err.request);
+            console.log('*** Response Request: ', err.request);
           } else {
-            console.log('Error', err.message);
+            console.log('*** Error', err.message);
           }
-          console.log(err.config);
+          console.log('*** Error Config', err.config);
+          console.log('*** Raw Error', err.toJSON());
         }),
       defaultVersion: await models.getPackageData(key)
         .then((results) => results.data.versions.filter((v) => v.isDefault)[0])
@@ -61,15 +62,15 @@ exports.buildDependecyArray = (dependencyObj) => Promise.all(
         .catch((err) => {
           console.log(`Error getting defaultVersion in ${key}`, err);
           if (err.response) {
-            console.log(err.response.data);
-            console.log(err.response.status);
-            console.log(err.response.headers);
+            console.log('*** Response Data: ', err.response.data);
+            console.log('*** Response Status: ', err.response.status);
+            console.log('*** Response Headers: ', err.response.headers);
           } else if (err.request) {
-            console.log(err.request);
+            console.log('*** Response Request: ', err.request);
           } else {
-            console.log('Error', err.message);
+            console.log('*** Error', err.message);
           }
-          console.log(err.config);
+          console.log('*** Error Config', err.config);
         }),
       recommend: null,
     };
