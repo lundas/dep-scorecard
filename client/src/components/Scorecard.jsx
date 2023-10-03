@@ -22,7 +22,7 @@ export default function Scorecard({ dependencies }) {
             <ScorecardEntry key={d.name + d.version} dependency={d} />
           ))}
         </tbody>
-        <thead>
+        {/* <thead>
           <tr>
             <th colSpan="5" className="p-3 text-2xl font-diph bg-dk-blue text-lt-gray">Dev Dependencies</th>
           </tr>
@@ -38,7 +38,7 @@ export default function Scorecard({ dependencies }) {
           {dependencies.devDependencies.map((d) => (
             <ScorecardEntry key={d.name + d.version} dependency={d} />
           ))}
-        </tbody>
+        </tbody> */}
       </table>
     </div>
   );
