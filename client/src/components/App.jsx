@@ -14,14 +14,20 @@ export default function App() {
   const [dependencies, setDependencies] = useState(blankDeps);
 
   return (
-    <div className="bg-dk-blue flex flex-col justify-evenly w-full h-full relative" role="application">
+    <div
+      className="bg-dk-blue flex flex-col justify-evenly w-full h-full relative"
+      role="application"
+    >
       <div>
         <h1 className="text-6xl font-diph text-center">
           Dependecy Scorecard
         </h1>
       </div>
-      <UploadForm setDependencies={setDependencies} setRevealScorecard={setRevealScorecard} />
-      <About />
+      <UploadForm
+        setDependencies={setDependencies}
+        setRevealScorecard={setRevealScorecard}
+      />
+      {/* <About /> */}
       {revealScorecard && <Scorecard dependencies={dependencies} />}
       {revealScorecard && (
       <div
@@ -30,7 +36,8 @@ export default function App() {
           setRevealScorecard(false);
           setDependencies(blankDeps);
         }}
-        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-charcoal opacity-70 w-screen h-screen z-10"
+        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
+        bg-charcoal opacity-70 w-screen h-screen z-10"
       />
       )}
     </div>

@@ -3,7 +3,12 @@ import ScorecardEntry from './ScorecardEntry';
 
 export default function Scorecard({ dependencies }) {
   return (
-    <div id="table-container" className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-11/12 h-4/6 overflow-y-scroll z-50 bg-lt-gray text-dk-blue round-2xl shadow-even shadow-mid-blue rounded-2xl bg-opacity-70">
+    <div
+      id="table-container"
+      className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
+      w-11/12 h-4/6 overflow-y-scroll z-50 bg-lt-gray text-dk-blue round-2xl
+      shadow-even shadow-mid-blue rounded-2xl bg-opacity-70"
+    >
       <table className="text-center w-full">
         <thead>
           <tr>
