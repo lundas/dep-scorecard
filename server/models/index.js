@@ -10,6 +10,7 @@ exports.getProjectData = (name, version, system = 'npm') => exports.getVersionDa
     const sourceRepo = results.data.links.filter((link) => link.label === 'SOURCE_REPO')[0].url;
     const sourceUrl = new URL(sourceRepo);
     const projectKeyId = `${sourceUrl.hostname}${sourceUrl.pathname.split('.')[0]}`;
+    console.log('projectKeyId: ', projectKeyId);
     return axios.get(`${process.env.URL}/projects/${encodeURIComponent(projectKeyId)}`);
   });
 

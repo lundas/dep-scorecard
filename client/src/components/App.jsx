@@ -28,8 +28,8 @@ export default function App() {
         setRevealScorecard={setRevealScorecard}
       />
       {/* <About /> */}
-      {revealScorecard && <Scorecard dependencies={dependencies} />}
-      {revealScorecard && (
+      <Scorecard dependencies={dependencies} />
+      {/* {revealScorecard && (
       <div
         id="modal-overlay"
         onClick={(e) => {
@@ -39,7 +39,7 @@ export default function App() {
         className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
         bg-charcoal opacity-70 w-screen h-screen z-10"
       />
-      )}
+      )} */}
     </div>
   );
 }
