@@ -23,57 +23,25 @@ exports.processFile = (req, res) => {
   // const depArray = Promise.all([depRows, devDepRows]);
 
   const allDeps = { ...dependencies, ...devDependencies };
-  const depArray = exports.buildDependecyArray(allDeps);
+  const depArray = exports.buildDependecyArray(allDeps).then((results) => results.forEach((r) => console.log(r.data)));
 
-  depArray
-    .then((results) => {
-      res.status(201).json({ dependencies: results, devDependencies: [] });
-    })
-    .catch((err) => {
-      console.log('Error assembling dependency array:', err);
-      res.sendStatus(500);
-    });
+  res.sendStatus(200);
+
+  // depArray
+  //   .then((results) => {
+  //     res.status(201).json({ dependencies: results, devDependencies: [] });
+  //   })
+  //   .catch((err) => {
+  //     console.log('Error assembling dependency array:', err);
+  //     res.sendStatus(500);
+  //   });
 };
 
-exports.buildDependecyArray = (dependencyObj) => Promise.all(
-  Object.keys(dependencyObj).map(async (key) => {
-    const obj = {
-      name: key,
-      version: dependencyObj[key],
-      score: await models.getProjectData(key, dependencyObj[key].slice(1))
-        .then((results) => (results.data.scorecard ? results.data.scorecard.overallScore : null))
-        .catch((err) => {
-          console.log(`Error getting score for ${key}`);
-          if (err.response) {
-            console.log('*** Response Data: ', err.response.data);
-            console.log('*** Response Status: ', err.response.status);
-            console.log('*** Response Headers: ', err.response.headers);
-          } else if (err.request) {
-            console.log('*** Response Request: ', err.request);
-          } else {
-            console.log('*** Error', err.message);
-          }
-          console.log('*** Error Config', err.config);
-          console.log('*** Raw Error', err.toJSON());
-        }),
-      defaultVersion: await models.getPackageData(key)
-        .then((results) => results.data.versions.filter((v) => v.isDefault)[0])
-        .then((result) => result.versionKey.version)
-        .catch((err) => {
-          console.log(`Error getting defaultVersion in ${key}`, err);
-          if (err.response) {
-            console.log('*** Response Data: ', err.response.data);
-            console.log('*** Response Status: ', err.response.status);
-            console.log('*** Response Headers: ', err.response.headers);
-          } else if (err.request) {
-            console.log('*** Response Request: ', err.request);
-          } else {
-            console.log('*** Error', err.message);
-          }
-          console.log('*** Error Config', err.config);
-        }),
-      recommend: null,
-    };
-    return obj;
-  }),
-);
+exports.buildDependecyArray = (dependencyObj) => {
+  const pkgs = Object.keys(dependencyObj);
+  const data = pkgs.map((pkg) => (
+    // models.getProjectData(pkg, dependencyObj[pkg].slice(1))
+    models.getVersionData(pkg, dependencyObj[pkg].slice(1))
+  ));
+  return Promise.all(data);
+};
