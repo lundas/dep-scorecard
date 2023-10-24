@@ -11,7 +11,7 @@ export default function App() {
     devDependencies: [],
   };
   const [revealScorecard, setRevealScorecard] = useState(false);
-  const [dependencies, setDependencies] = useState(blankDeps);
+  const [dependencies, setDependencies] = useState([]);
 
   return (
     <div

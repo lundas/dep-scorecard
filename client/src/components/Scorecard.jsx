@@ -6,8 +6,8 @@ export default function Scorecard({ dependencies }) {
     <div
       id="table-container"
     >
-      {dependencies.dependencies.map((dep) => (
-        <ScorecardEntry dependecy={dep} />
+      {dependencies.map((dep) => (
+        <ScorecardEntry dependency={dep} />
       ))}
     </div>
   );
