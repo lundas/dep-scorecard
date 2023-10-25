@@ -5,13 +5,16 @@ import Scorecard from './Scorecard';
 import UploadForm from './UploadForm';
 import About from './About';
 
+// mock data for frontend dev
+const mockData = require('../../../__mocks__/mockData');
+
 export default function App() {
   const blankDeps = {
     dependencies: [],
     devDependencies: [],
   };
   const [revealScorecard, setRevealScorecard] = useState(false);
-  const [dependencies, setDependencies] = useState([]);
+  const [dependencies, setDependencies] = useState([mockData]); // mock data
 
   return (
     <div

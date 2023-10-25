@@ -4,15 +4,23 @@ export default function ScoreCardEntry({ dependency }) {
   return (
     <>
       <div>
-        Package:
-        {' '}
-        {dependency[0] ? dependency[0].versionKey.name : 'No Data'}
+        <div>
+          <h2>OSSF Scorecard</h2>
+        </div>
+        <div>
+          <h2>Version</h2>
+        </div>
       </div>
-      <div>
-        Score:
-        {' '}
-        {dependency[1] ? dependency[1].score : 'No Data'}
-      </div>
+      <button
+        className="bg-gray py-2 px-4 rounded"
+        type="button"
+        onClick={() => {
+          console.log(dependency);
+        }}
+      >
+        Log Dep
+
+      </button>
     </>
   );
 }
