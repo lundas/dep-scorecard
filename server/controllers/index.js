@@ -23,15 +23,15 @@ exports.processFile = (req, res) => {
   // const depArray = Promise.all([depRows, devDepRows]);
 
   const allDeps = { ...dependencies, ...devDependencies };
-  const depArray = exports.buildDependecyArray(allDeps)
-    .then((results) => (
-      results.map((result) => (
-        [
-          result && result[0] ? result[0].data : null,
-          result && result[1] ? result[1].data : null,
-        ]
-      ))
-    ));
+  const depArray = exports.buildDependecyArray(allDeps);
+  // .then((results) => (
+  //   results.map((result) => (
+  //     [
+  //       result && result[0] ? result[0].data : null,
+  //       result && result[1] ? result[1].data : null,
+  //     ]
+  //   ))
+  // ));
 
   depArray
     .then((results) => {

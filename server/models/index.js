@@ -20,13 +20,18 @@ exports.getScorecard = (url) => (
 );
 
 exports.getProjectData = async (name, version, system = 'npm') => {
+  let versionReq;
+  let sourceRepo;
+  let sourceUrl;
+  let projectKeyId;
+  let OssfReq;
   try {
-    const versionReq = await exports.getVersionData(name, version, system);
-    const sourceRepo = versionReq.data.links.filter((link) => link.label === 'SOURCE_REPO')[0].url;
-    const sourceUrl = new URL(sourceRepo);
-    const projectKeyId = `${sourceUrl.hostname}${sourceUrl.pathname.split('.')[0]}`;
-    const OssfReq = await exports.getScorecard(projectKeyId);
-    return [versionReq, OssfReq];
+    versionReq = await exports.getVersionData(name, version, system);
+    sourceRepo = versionReq.data.links.filter((link) => link.label === 'SOURCE_REPO')[0].url;
+    sourceUrl = new URL(sourceRepo);
+    projectKeyId = `${sourceUrl.hostname}${sourceUrl.pathname.split('.')[0]}`;
+    OssfReq = await exports.getScorecard(projectKeyId);
+    versionReq.data.scorecard = OssfReq.data;
   } catch (err) {
     console.log(`Error getting Project Data for ${name}`);
     if (err.response) {
@@ -40,6 +45,7 @@ exports.getProjectData = async (name, version, system = 'npm') => {
     }
     console.log('*** Error Config', err.config);
   }
+  return versionReq.data;
 };
 
 // exports.getProjectData = (name, version, system = 'npm') => exports.getVersionData(name, version, system)
