@@ -18,7 +18,7 @@ export default function App() {
 
   return (
     <div
-      className="bg-dk-blue flex flex-col justify-evenly w-full h-full relative"
+      className="bg-dk-blue flex flex-col w-full h-full relative"
       role="application"
     >
       <div>
