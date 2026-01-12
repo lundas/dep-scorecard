@@ -18,12 +18,12 @@ exports.processFile = (req, res) => {
 
   models.insertPackage(name, version, repository, homepage, dependencies, devDependencies);
 
-  // const depRows = exports.buildDependecyArray(dependencies);
-  // const devDepRows = exports.buildDependecyArray(devDependencies);
+  // const depRows = exports.buildDependencyArray(dependencies);
+  // const devDepRows = exports.buildDependencyArray(devDependencies);
   // const depArray = Promise.all([depRows, devDepRows]);
 
   const allDeps = { ...dependencies, ...devDependencies };
-  const depArray = exports.buildDependecyArray(allDeps);
+  const depArray = exports.buildDependencyArray(allDeps);
 
   depArray
     .then((results) => {
@@ -35,7 +35,7 @@ exports.processFile = (req, res) => {
     });
 };
 
-exports.buildDependecyArray = (dependencyObj) => Promise.all(
+exports.buildDependencyArray = (dependencyObj) => Promise.all(
   Object.keys(dependencyObj).map(async (key) => {
     const obj = {
       name: key,
@@ -57,8 +57,10 @@ exports.buildDependecyArray = (dependencyObj) => Promise.all(
           console.log('*** Raw Error', err.toJSON());
         }),
       defaultVersion: await models.getPackageData(key)
-        .then((results) => results.data.versions.filter((v) => v.isDefault)[0])
-        .then((result) => result.versionKey.version)
+        .then((results) => {
+          const defaultVer = results.data.versions.find((v) => v.isDefault);
+          return defaultVer ? defaultVer.versionKey.version : null;
+        })
         .catch((err) => {
           console.log(`Error getting defaultVersion in ${key}`, err);
           if (err.response) {
@@ -71,6 +73,7 @@ exports.buildDependecyArray = (dependencyObj) => Promise.all(
             console.log('*** Error', err.message);
           }
           console.log('*** Error Config', err.config);
+          return null;
         }),
       recommend: null,
     };
